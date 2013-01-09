@@ -164,7 +164,7 @@
 			// if option is empty, populate it with the defaults
 			if ( empty( $option ) ) {
 				$this->action_plugin_activation(null);
-				$option = $this->acronyms;
+				$option = Options::get( 'acronyms__acronyms' );
 			}
 			
 			$option = explode( "\n", $option );
