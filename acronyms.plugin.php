@@ -182,8 +182,8 @@
 			
 			$content = " $content ";
 			foreach ( $acronyms as $acronym => $text ) {
-								
-				$content = preg_replace( "|(?!<[^<>]*?)(?<![?.&])\b$acronym\b(?!:)(?![^<>]*?>)|msU", "<abbr title=\"$text\">$acronym</abbr>" , $content );
+				$preg_acronym = preg_quote( $acronym, '|' );
+				$content = preg_replace( '|(?!<[^<>]*?)(?<![?.&])\b' . $preg_acronym . '(?!\w)(?!:)(?![^<>]*?>)|msU', "<abbr title=\"$text\">$acronym</abbr>" , $content );
 				
 			}
 			$content = trim( $content );
