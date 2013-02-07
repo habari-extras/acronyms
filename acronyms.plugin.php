@@ -182,6 +182,7 @@
 			
 			$content = " $content ";
 			foreach ( $acronyms as $acronym => $text ) {
+				$text = trim( $text );
 				$preg_acronym = preg_quote( $acronym, '|' );
 				$content = preg_replace( '|(?!<[^<>]*?)(?<![?.&])\b' . $preg_acronym . '(?!\w)(?!:)(?![^<>]*?>)|msU', "<abbr title=\"$text\">$acronym</abbr>" , $content );
 				
