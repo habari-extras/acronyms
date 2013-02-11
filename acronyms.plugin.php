@@ -1,5 +1,7 @@
 <?php
 
+namespace Habari;
+
 	class Acronyms extends Plugin {
 				
 		public $acronyms = array(
