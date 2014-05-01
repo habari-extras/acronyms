@@ -199,9 +199,9 @@ namespace Habari;
 			
 			$ui = new FormUI( 'acronyms' );
 			
-			$iam_key = $ui->append( 'textarea', 'acronyms', 'acronyms__acronyms', _t( 'Acronyms' ) );
-			
-			$ui->append( 'submit', 'save', _t( 'Save' ) );
+			$ui->append( FormControlLabel::wrap( _t( 'Acronyms', 'acronyms' ), FormControlTextArea::create( 'acronyms', 'option:acronyms__acronyms' ) ) );
+
+			$ui->append( 'submit', 'save', _t( 'Save', 'acronyms' ) );
 			$ui->out();
 			
 		}
